@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .u-row {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-left: 0;
+            margin-right: 0
+        }
+
+        .u-row .u-col {
+            position: relative;
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0
+        }
+
+        .u-row .u-col.u-col-100 {
+            flex: 0 0 100%;
+            max-width: 100%
+        }
+
+        @media (max-width:767px) {
+            .u-row:not(.no-stack) {
+                flex-wrap: wrap
+            }
+            .u-row:not(.no-stack) .u-col {
+                flex: 0 0 100% !important;
+                max-width: 100% !important
+            }
+        }
+
+        body,
+        html {
+            padding: 0;
+            margin: 0
+        }
+
+        html {
+            box-sizing: border-box
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: inherit
+        }
+
+        html {
+            font-size: 14px;
+            -ms-overflow-style: scrollbar;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        p {
+            margin: 0
+        }
+
+        form .error-field {
+            -webkit-animation-name: shake;
+            animation-name: shake;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+
+        form .error-field input,
+        form .error-field textarea {
+            border-color: #a94442 !important;
+            color: #a94442 !important
+        }
+
+        form .field-error {
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: 700;
+            position: absolute;
+            top: -20px;
+            right: 10px
+        }
+
+        form .field-error:after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color: #ebcccc;
+            border-width: 5px;
+            margin-left: -5px
+        }
+
+        form .spinner {
+            margin: 0 auto;
+            width: 70px;
+            text-align: center
+        }
+
+        form .spinner>div {
+            width: 12px;
+            height: 12px;
+            background-color: hsla(0, 0%, 100%, .5);
+            margin: 0 2px;
+            border-radius: 100%;
+            display: inline-block;
+            -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both
+        }
+
+        form .spinner .bounce1 {
+            -webkit-animation-delay: -.32s;
+            animation-delay: -.32s
+        }
+
+        form .spinner .bounce2 {
+            -webkit-animation-delay: -.16s;
+            animation-delay: -.16s
+        }
+
+        @-webkit-keyframes sk-bouncedelay {
+            0%,
+            80%,
+            to {
+                -webkit-transform: scale(0)
+            }
+            40% {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes sk-bouncedelay {
+            0%,
+            80%,
+            to {
+                -webkit-transform: scale(0);
+                transform: scale(0)
+            }
+            40% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes shake {
+            0%,
+            to {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-10px, 0, 0);
+                transform: translate3d(-10px, 0, 0)
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(10px, 0, 0);
+                transform: translate3d(10px, 0, 0)
+            }
+        }
+
+        @keyframes shake {
+            0%,
+            to {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-10px, 0, 0);
+                transform: translate3d(-10px, 0, 0)
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(10px, 0, 0);
+                transform: translate3d(10px, 0, 0)
+            }
+        }
+
+        @media (max-width:480px) {
+            .container {
+                max-width: 100% !important
+            }
+        }
+
+        @media (min-width:481px) and (max-width:768px) {
+            .hide-tablet {
+                display: none !important
+            }
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        @media (min-width:576px) {
+            .container {
+                max-width: 540px
+            }
+        }
+
+        @media (min-width:768px) {
+            .container {
+                max-width: 720px
+            }
+        }
+
+        @media (min-width:992px) {
+            .container {
+                max-width: 960px
+            }
+        }
+
+        @media (min-width:1200px) {
+            .container {
+                max-width: 1140px
+            }
+        }
+
+        a[onclick] {
+            cursor: pointer
+        }
+
+        body {
+            font-family: Poppins, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff
+        }
+
+        #u_body a {
+            color: #00e;
+            text-decoration: underline
+        }
+
+        #u_body a:hover {
+            color: #00e;
+            text-decoration: underline
+        }
+
+        #u_content_button_1 a:hover {
+            color: #fff !important;
+            background-color: #db292a !important
+        }
+
+        #u_content_button_2 a:hover {
+            color: #fff !important;
+            background-color: #db292a !important
+        }
+
+        @media (max-width:480px) {
+            #u_content_heading_8.v-container-padding-padding {
+                padding: 10px 10px 0 !important
+            }
+            #u_content_heading_8 .v-font-size {
+                font-size: 21px !important
+            }
+            #u_content_heading_8 .v-line-height {
+                line-height: 120% !important
+            }
+            #u_content_image_1.v-container-padding-padding {
+                padding: 6px !important
+            }
+            #u_content_button_1.v-container-padding-padding {
+                padding: 5px 14px !important
+            }
+            #u_content_button_1 .v-font-size {
+                font-size: 16px !important
+            }
+            #u_content_button_1 .v-line-height {
+                line-height: 170% !important
+            }
+            #u_content_button_1 .v-padding {
+                padding: 10px 20px !important
+            }
+            #u_content_button_1 .v-border-radius {
+                border-radius: 15px !important
+            }
+            #u_content_text_3 .v-text-align {
+                text-align: center !important
+            }
+            #u_content_text_3 .v-line-height {
+                line-height: 110% !important
+            }
+            #u_content_text_4 .v-text-align {
+                text-align: center !important
+            }
+            #u_content_text_4 .v-line-height {
+                line-height: 110% !important
+            }
+            #u_content_button_2.v-container-padding-padding {
+                padding: 5px 14px 10px !important
+            }
+            #u_content_button_2 .v-font-size {
+                font-size: 16px !important
+            }
+            #u_content_button_2 .v-line-height {
+                line-height: 170% !important
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+
+   <!--Optional, send client hints to get accurate device data-->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://ar8hvu.mcgo2.com; sec-ch-ua-mobile https://ar8hvu.mcgo2.com; sec-ch-ua-arch https://ar8hvu.mcgo2.com; sec-ch-ua-model https://ar8hvu.mcgo2.com; sec-ch-ua-platform https://ar8hvu.mcgo2.com; sec-ch-ua-platform-version https://ar8hvu.mcgo2.com; sec-ch-ua-bitness https://ar8hvu.mcgo2.com; sec-ch-ua-full-version-list https://ar8hvu.mcgo2.com; sec-ch-ua-full-version https://ar8hvu.mcgo2.com" />
+
+<!-- MaxConv Tracking Script Base Code-->
+<script>!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://ar8hvu.mcgo2.com/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
+<noscript><link rel="stylesheet" href="https://ar8hvu.mcgo2.com/t/t.css?mc_ns=1" /></noscript>
+<!-- End MaxConv Tracking Script Base Code-->
+
+</head>
+
+<body>
+    <div id="u_body" class="u_body" style="min-height:100vh">
+        <div id="u_row_1" class="u_row" style="padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_1" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_heading_8" class="cta v-container-padding-padding" style="overflow-wrap:break-word;padding:10px 10px 3px">
+                                <h1 class="v-text-align v-line-height v-font-size" style="margin:0;line-height:140%;text-align:left;word-wrap:break-word;font-size:43px;font-weight:400"><span><span><span><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><span style="line-height:25.2px"><strong>Discover the 7-Second <a rel="noopener" href="https://ar8hvu.mcgo2.com/click" target="_blank">"Morning Ritual"</a> That's Helping People.</strong></span></span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u_row_2" class="u_row" style="padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_2" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_image_1" class="cta v-container-padding-padding" style="overflow-wrap:break-word;padding:34px">
+                                <div class="v-text-align" style="position:relative;line-height:0;text-align:center"> <a href="https://ar8hvu.mcgo2.com/click" target="_blank"> <img alt="" src="https://123pagebuilder.s3.us-east-1.amazonaws.com/123tapronto1713755500374-creative%2810%29.jpg" style="width:100%;max-width:600px" title=""> </a>                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u_row_9" class="u_row" style="padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_11" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_button_1" class="cta v-container-padding-padding" style="overflow-wrap:break-word;padding:14px">
+                                <div class="v-text-align" style="text-align:center"> <a href="https://ar8hvu.mcgo2.com/click" target="_blank" class="v-line-height v-padding v-border-radius v-font-size" style="color:#fff;background-color:#db292a;border-radius:15px;line-height:170%;display:inline-block;text-decoration:none;text-align:center;padding:10px 20px;width:auto;max-width:100%;word-wrap:break-word;font-family:'Archivo Black',sans-serif;font-size:27px;font-weight:400"> Click Here To Watch The Video </a>                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                      </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u_row_4" class="u_row" style="background-color:#ecf0f1;padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_4" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_heading_1" class="u_content_heading v-container-padding-padding" style="overflow-wrap:break-word;padding:1px">
+                                <h1 class="v-text-align v-line-height v-font-size" style="margin:0;line-height:140%;text-align:center;word-wrap:break-word;font-size:15px;font-weight:400"><span><span><span><span><span><span><a rel="noopener" href="https://harmonylifehacks.site/privacypolice" target="_blank"><span><span><span><span>Privacy Police</span></span>
+                                    </span>
+                                    </span>
+                                    </a> | <a rel="noopener" href="https://harmonylifehacks.site/termsofservice" target="_blank">Terms of Service</a></span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u_row_6" class="u_row" style="background-color:#ecf0f1;padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_8" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_text_1" class="u_content_text v-container-padding-padding" style="overflow-wrap:break-word;padding:10px">
+                                <div class="v-text-align v-line-height v-font-size" style="font-size:14px;line-height:140%;text-align:center;word-wrap:break-word">
+                                    <p style="line-height:140%"><span style="line-height:19.6px">Copyright © 2022 All Rights Reserved.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u_row_7" class="u_row" style="background-color:#ecf0f1;padding:0">
+            <div class="container" style="max-width:800px;margin:0 auto">
+                <div class="u-row">
+                    <div id="u_column_9" class="u-col u-col-100 u_column" style="display:flex;border-top:0 solid transparent;border-left:0 solid transparent;border-right:0 solid transparent;border-bottom:0 solid transparent;border-radius:0">
+                        <div style="width:100%;padding:0">
+                            <div id="u_content_text_2" class="u_content_text v-container-padding-padding" style="overflow-wrap:break-word;padding:10px">
+                                <div class="v-text-align v-line-height v-font-size" style="font-size:14px;line-height:140%;text-align:justify;word-wrap:break-word">
+                                    <p style="line-height:140%">Please note that the information we provide is not intended to replace consultation with a qualified medical professional. We encourage you to inform your physician of changes you make to your lifestyle and discuss
+                                        these with him or her. For questions or concerns about any medical conditions you may have, please contact your doctor.</p>
+                                    <p style="line-height:140%">Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or
+                                        have a medical condition, consult your physician before using our products.</p>
+                                    <p style="line-height:140%">The website's content and the product for sale is based upon the author's opinion and is provided solely on an "AS IS" and "AS AVAILABLE" basis. You should do your own research and confirm the information with other
+                                        sources when searching for information regarding health issues and always review the information carefully with your professional health care provider before using any of the protocols presented on this website
+                                        and/or the product sold here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script async="true" src="https://c1.cdn1tp.net/ghelper/googletagmanager.js"></script>
+</body>
+
+</html>
